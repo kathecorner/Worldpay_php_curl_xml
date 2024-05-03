@@ -1,6 +1,9 @@
 <?php
 $url = "https://secure-test.worldpay.com/jsp/merchant/xml/paymentService.jsp";
-$xml = '<?xml version="1.0" encoding="UTF-8"?>
+$xml = '<?xml version="1.0" encoding="UTF-8"?>;
+$username='KVLZNJLLHCMSONK1JPSF';
+$password='DEmo2000';
+
 <!DOCTYPE paymentService PUBLIC "-//WorldPay//DTD WorldPay PaymentService v1//EN" "http://dtd.worldpay.com/paymentService_v1.dtd">
 <paymentService version="1.4" merchantCode="DEMO">
  <submit>
@@ -46,6 +49,7 @@ curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
 
 $data = curl_exec($ch); 
 echo $data;
