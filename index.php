@@ -35,7 +35,8 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
 
 $headers = array(
     "Content-type: text/xml",
-    "Charset: UTF-8"
+    "Charset: UTF-8",
+    "Authorization:Basic KVLZNJLLHCMSONK1JPSF:DEmo2000"
 );
 
 $ch = curl_init(); 
