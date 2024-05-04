@@ -1,5 +1,5 @@
 <?php
-echo "this is the repo";
+
 $url = "https://secure-test.worldpay.com/jsp/merchant/xml/paymentService.jsp";
 $username='KVLZNJLLHCMSONK1JPSF';
 $password='DEmo2000';
@@ -50,7 +50,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
-
+echo "this is right before curl execute.";
 $data = curl_exec($ch); 
 echo $data;
 if(curl_errno($ch))
