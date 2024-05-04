@@ -1,5 +1,5 @@
 <?php
-$echo "this is the repo";
+echo "this is the repo";
 $url = "https://secure-test.worldpay.com/jsp/merchant/xml/paymentService.jsp";
 $username='KVLZNJLLHCMSONK1JPSF';
 $password='DEmo2000';
