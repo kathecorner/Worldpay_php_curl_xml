@@ -1,8 +1,7 @@
 <?php
-
-$url = "https://secure-test.worldpay.com/jsp/merchant/xml/paymentService.jsp";
 $username='KVLZNJLLHCMSONK1JPSF';
 $password='DEmo2000';
+
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE paymentService PUBLIC "-//WorldPay//DTD WorldPay PaymentService v1//EN" "http://dtd.worldpay.com/paymentService_v1.dtd">
 <paymentService version="1.4" merchantCode="DEMO">
@@ -18,7 +17,7 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
    <paymentMethodMask>
     <include code="ALL"/>
    </paymentMethodMask>
-   <shopper>
+   <shopper>å
     <shopperEmailAddress>sp@worldpay.com</shopperEmailAddress>
    </shopper>
    <shippingAddress>
@@ -36,25 +35,24 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
  </submit>
 </paymentService>';
 
-$headers = array(
-    "Content-type: text/xml",
-    "Charset: UTF-8"
-);
+$url = "https://secure-test.worldpay.com/jsp/merchant/xml/paymentService.jsp"; // URL to make some test
+$ch = curl_init($url);
 
-$ch = curl_init(); 
-curl_setopt($ch, CURLOPT_URL,$url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
+curl_setopt($ch, CURLOPT_POSTFIELDS, "xml=" . $xml);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
-echo "this is right before curl execute.";
-$data = curl_exec($ch); 
-echo $data;
+
+$data = curl_exec($ch);
+echo '<pre>';
+echo htmlentities($data);
+echo '</pre>';
+
 if(curl_errno($ch))
     print curl_error($ch);
 else
     curl_close($ch);
+
 ?>
