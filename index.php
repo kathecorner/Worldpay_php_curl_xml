@@ -4,9 +4,9 @@ $password='DEmo2000';
 
 $xml = '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE paymentService PUBLIC "-//WorldPay//DTD WorldPay PaymentService v1//EN" "http://dtd.worldpay.com/paymentService_v1.dtd">
-<paymentService version="1.4" merchantCode="DEMO">
+<paymentService version="1.4" merchantCode="SCTEAMHPPECOMCSC">
  <submit>
-  <order orderCode="jsxml3688569572" installationId="1447940">
+  <order orderCode="SCTEAMHPPECOMCSC26629" installationId="1419715">
    <description>test order</description>
    <amount value="100" currencyCode="EUR" exponent="2"/>
    <orderContent>
