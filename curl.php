@@ -6,7 +6,7 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE paymentService PUBLIC "-//WorldPay//DTD WorldPay PaymentService v1//EN" "http://dtd.worldpay.com/paymentService_v1.dtd">
 <paymentService version="1.4" merchantCode="DEMO">
  <submit>
-  <order orderCode="jsxml3688569571" installationId="1447940">
+  <order orderCode="jsxml3688569574" installationId="1447940">
    <description>test order</description>
    <amount value="100" currencyCode="EUR" exponent="2"/>
    <orderContent>
@@ -50,9 +50,22 @@ echo '<pre>';
 echo htmlentities($data);
 echo '</pre>';
 
+$redirect_url = simplexml_load_string($data); 
+
+$json = json_encode($redirect_url);
+echo $json;
+
+$arr = json_decode($json, true);
+$url = $arr['reply']['orderStatus']['reference'];
+
+
+
 if(curl_errno($ch))
     print curl_error($ch);
 else
     curl_close($ch);
+
+header("Location: ".$url);
+die();
 
 ?>
