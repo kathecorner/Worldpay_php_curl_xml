@@ -1,6 +1,6 @@
 <?php
 $ordernum = file_get_contents("./ordercode.txt");
-echo $ordernum;
+//echo $ordernum;
 
 
 ?>
