@@ -68,9 +68,9 @@
 <body>
 <form action="curl.php" method="post">
 <div class="purchase" id='checkoutDiv'>
-  <h1 class="submit">Redirect to HPP site</h1>
-   <div>Amount</div><div><input type="text" name="amount" size=10></div>
-   <div>Currency</div><div><input type="text" name="currency" size=4></div>
+  <h1 class="submit">WPG Redirect to HPP site</h1>
+   <div>Amount</div><div><input type="text" name="amount" size=10 value="1.00"></div>
+   <div>Currency</div><div><input type="text" name="currency" size=4 value="EUR"></div>
    <div class="submit"><input type="submit" value="Submit"></input></div>
 </div>
 </form>
