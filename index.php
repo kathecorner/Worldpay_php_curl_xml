@@ -76,7 +76,7 @@ echo $ordernum;
 <form action="curl.php" method="post">
 <div class="purchase" id='checkoutDiv'>
   <h1 class="submit">WPG Redirect to HPP site</h1>
-   <div>Amount</div><div><input type="text" name="amount" size=8 value="1.00"></div>
+   <div>Amount</div><div><input type="text" name="amount" size=8 value="1000"></div>
    <div>Currency</div><div><input type="text" name="currency" size=5 value="EUR"></div>
    <div>orderCode</div><div><input type="text" name="ordernum" size=12 value=<?php echo $ordernum ?>></div>
    <div class="submit"><input type="submit" value="Submit"></input></div>
