@@ -71,6 +71,36 @@ $ordernum = file_get_contents("./ordercode.txt");
     margin:  10px;
    }
 
+   .switch_outer {
+    width: 120px;
+    height: 60px;
+    background-color: lightgray;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+.switch_outer.active {
+    background-color: #51E373;
+}
+.toggle_switch {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    margin: auto;
+    box-shadow: 1px 1px 7px #B7B7B7, -1px -1px 4px #CECECE inset;
+    transition: left .3s ease-in-out;
+}
+.toggle_switch.active {
+    left: 65px;
+}
+
+
 </style>
 <body>
 <form action="curl.php" method="post">
@@ -81,6 +111,21 @@ $ordernum = file_get_contents("./ordercode.txt");
    <div>orderCode</div><div><input type="text" name="ordernum" size=12 value=<?php echo $ordernum ?>></div>
    <div class="submit"><input type="submit" value="Submit"></input></div>
 </div>
+    <div class="switch_outer">
+    <div class="toggle_switch"></div>
+</div>
 </form>
 </body>
+    <script>
+        //スイッチの外枠とスイッチの要素を取得
+const switchOuter = document.querySelector(".switch_outer");
+const toggleSwitch = document.querySelector(".toggle_switch");
+
+//クリックでacitveクラスを追加/削除
+switchOuter.addEventListener("click", () => {
+    switchOuter.classList.toggle("active");
+    toggleSwitch.classList.toggle("active");
+});
+
+    </script>
 </html>
