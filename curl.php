@@ -8,7 +8,7 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE paymentService PUBLIC "-//WorldPay//DTD WorldPay PaymentService v1//EN" "http://dtd.worldpay.com/paymentService_v1.dtd">
 <paymentService version="1.4" merchantCode="FADDEMOSGDECOM">
  <submit>
-   <order orderCode="jsxml'.$_POST['ordernum'].'" installationId="1447940">
+   <order orderCode="kenjixml'.$_POST['ordernum'].'" installationId="1447940">
    <description>test order</description>
    <amount value="'.$_POST['amount'].'" currencyCode="'.$_POST['currency'].'" exponent="2"/>
    <orderContent>
