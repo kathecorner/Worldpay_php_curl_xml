@@ -4,9 +4,9 @@ $password='Live2024!';
 
 
 
-$xml = <?xml version="1.0" encoding="UTF-8"?>
+$xml = '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE paymentService PUBLIC "-//WorldPay//DTD WorldPay PaymentService v1//EN" "http://dtd.worldpay.com/paymentService_v1.dtd">
-<paymentService version="1.4" merchantCode="DEMO">
+<paymentService version="1.4" merchantCode="FADDEMOSGDECOM">
  <submit>
    <order orderCode="kenjixml'.$_POST['ordernum'].'" installationId="1447940">
    <description>test order</description>
@@ -21,6 +21,7 @@ $xml = <?xml version="1.0" encoding="UTF-8"?>
    </paymentMethodMask>
    <shopper>
     <shopperEmailAddress>sp@worldpay.com</shopperEmailAddress>
+    <authenticatedShopperID>shopperID</authenticatedShopperID>
    </shopper>
    <shippingAddress>
     <address>
@@ -33,6 +34,10 @@ $xml = <?xml version="1.0" encoding="UTF-8"?>
      <countryCode>GB</countryCode>
     </address>
    </shippingAddress>
+   <createToken tokenScope="shopper">
+    <tokenEventReference>eventReference</tokenEventReference>
+    <tokenReason>reason</tokenReason>
+   </createToken>
   </order>
  </submit>
 </paymentService>';
